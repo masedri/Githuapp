@@ -1,3 +1,4 @@
+import { Repositories } from './../../providers/repositories';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -9,14 +10,38 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   selector: 'page-details',
-  templateUrl: 'details.html'
+  templateUrl: 'details.html',
+  providers: [Repositories]
 })
 export class DetailsPage {
+  name: string;
+  description: string;
+  url: string;
+  homepage: string;
+  language: string;
+  login:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private repoService: Repositories) {
+
+
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+    this.name = this.navParams.get('name');
+    this.description = this.navParams.get('description');
+    this.url = this.navParams.get('html_url');
+    this.homepage = this.navParams.get('homepage');
+    this.language = this.navParams.get('language');
+    this.login = this.navParams.get('owner');
+
   }
 
 }
+
+
+
+

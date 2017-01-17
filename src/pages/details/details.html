@@ -5,14 +5,38 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar color="primary">
-    <ion-title>Detalles Repo</ion-title>
+    <ion-title>Detalles Repositorio</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-card *ngIf="login">
+    <img src="{{login.avatar_url}}">
+    <ion-card-header text-center>
+      {{name}}
+    </ion-card-header>
+    <ion-card-content text-center>
+      {{description}}
+      <hr>
+      <p small icon-left>
+        <ion-icon name='construct'></ion-icon>
+        Lenguaje Principal: {{language}}
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col text-center>
+        <a ion-button clear small color="danger" text-center icon-left href="{{url}}">
+          <ion-icon name='logo-github'></ion-icon>
+          Github
+        </a>
+      </ion-col>
+      <ion-col text-center>
+        <a ion-button clear small color="danger" text-center icon-left href="{{homepage}}">
+          <ion-icon name='musical-notes'></ion-icon>
+          DemoLive
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

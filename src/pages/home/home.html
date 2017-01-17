@@ -30,7 +30,7 @@
     <ion-list-header [hidden]="!loadRepo">
       Repositorios de {{username}}
     </ion-list-header>
-    <button ion-item *ngFor="let repo of repositories" [navPush]="detailsPage">
+    <button ion-item *ngFor="let repo of repositories" (click)="newView(repo)">
         <strong>{{repo.name}}</strong>
       </button>
   </ion-list>

@@ -16,8 +16,6 @@ export class HomePage {
   private username: string;
   private loadRepo: boolean = false;
   private info;
-  private detailsPage = DetailsPage;
-
 
   constructor(public navCtrl: NavController, private repoService: Repositories) {
 
@@ -39,5 +37,8 @@ export class HomePage {
         this.info = data.json();
         console.log(data.json());
       });
+  }
+  newView(repo){
+    this.navCtrl.push(DetailsPage, repo);
   }
 }
