@@ -1,12 +1,15 @@
 <ion-header>
   <ion-navbar class="center" color="primary">
     <ion-title>
-      {{title}}
+    <ion-icon name='logo-github'></ion-icon>  {{title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div *ngIf="username != undefined && loadRepo">
+  <prueba [username]="username"></prueba>
+  </div>
   <ion-item padding>
     <ion-label floating>Usuario Github</ion-label>
     <ion-input [(ngModel)]="username"></ion-input>

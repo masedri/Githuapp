@@ -1,3 +1,4 @@
+import { PruebaComponent } from './../components/prueba/prueba';
 import { DetailsPage } from './../pages/details/details';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -8,7 +9,8 @@ import { HomePage } from '../pages/home/home';
   declarations: [
     MyApp,
     HomePage,
-    DetailsPage
+    DetailsPage,
+    PruebaComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +19,8 @@ import { HomePage } from '../pages/home/home';
   entryComponents: [
     MyApp,
     HomePage,
-    DetailsPage
+    DetailsPage,
+    PruebaComponent,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

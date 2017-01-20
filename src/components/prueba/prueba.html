@@ -1,0 +1,35 @@
+<!--
+  Generated template for the Prueba component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+<ion-card *ngIf="info">
+  <img src="{{info.avatar_url}}">
+  <ion-card-content>
+    <ion-card-title>
+      {{info.name}}
+      <hr>
+      <p>{{info.location}}</p>
+      <p>Repositorios - {{info.public_repos}}</p>
+      </ion-card-title>
+    <p>
+     {{info.bio}}
+    </p>
+  </ion-card-content>
+  <ion-row no-padding>
+      <ion-col text-center>
+        <a ion-button clear small color="danger" text-center icon-left href="mailto:{{info.email}}">
+          <ion-icon name='mail'></ion-icon>
+          Contacto
+        </a>
+      </ion-col>
+      <ion-col text-center>
+        <a ion-button clear small color="danger" text-center icon-left href="{{info.blog}}">
+          <ion-icon name='link'></ion-icon>
+          Pagina Web
+        </a>
+      </ion-col>
+    </ion-row>
+</ion-card>

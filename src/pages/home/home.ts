@@ -22,23 +22,27 @@ export class HomePage {
   }
 
   getRepos() {
-    this.repoService.getRepositories(this.username)
-      .subscribe((data) => {
-        // console.log(data);
-        this.repositories = data.json();
-        console.log(data.json());
-      })
-    this.loadRepo = true;
+    if (this.username != undefined && this.username != "") {
+      this.repoService.getRepositories(this.username)
+        .subscribe((data) => {
+          // console.log(data);
+          this.repositories = data.json();
+          console.log(data.json());
+        });
+        this.loadRepo = !this.loadRepo;
+    }
   }
   getUser() {
-    this.repoService.getInforUser(this.username)
-      .subscribe((data) => {
-        // console.log(data);
-        this.info = data.json();
-        console.log(data.json());
-      });
+    // this.repoService.getInforUser(this.username)
+    //   .subscribe((data) => {
+    //     // console.log(data);
+    //     this.info = data.json();
+    //     console.log(data.json());
+    //   });
+    this.loadRepo = !this.loadRepo;
+
   }
-  newView(repo){
+  newView(repo) {
     this.navCtrl.push(DetailsPage, repo);
   }
 }
